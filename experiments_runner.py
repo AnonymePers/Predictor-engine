@@ -53,7 +53,11 @@ def rec_sys_exp(dataset_name):
     # split into training and test
     
     X_train_val, X_test, y_train_val, y_test = train_test_split(X, y, test_size=0.2)
+    X_train_val = X_train_val.drop("prefix", axis=1)
     X_train, X_cal, y_train, y_cal = train_test_split(X_train_val, y_train_val, test_size=0.2,random_state=42)
+    X_test_prefix= X_test
+    X_test = X_test.drop("prefix", axis=1)
+    
    
     
     labeling = {
@@ -149,7 +153,7 @@ def rec_sys_exp(dataset_name):
     # Removing cal data from the model
     icp.cal_x=[]
     icp.cal_y=[]
-
+    
     test_pval = icp.predict(X_test.values)
     #print(test_pval)
     sys.path.append("plot_utils/python/src/")

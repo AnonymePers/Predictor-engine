@@ -686,7 +686,7 @@ def _plot_label_distro_computed(
     
     if sign_vals is not None:
         xs = sign_vals
-        x_label = x_label if x_label is not None else 'Significance'
+        x_label = x_label if x_label is not None else 'Significance (α) '
     else:
         xs = conf_vals
         x_label = x_label if x_label is not None else 'Confidence'
@@ -754,7 +754,7 @@ def _plot_label_distro_raw(
         ax=None,
         figsize=(10,8),
         title=None,
-        x_label = 'Significance',
+        x_label = 'Significance (α)',
         y_label = 'Label distribution',
         sign_vals=np.arange(0,1,0.01),
         cm=None,
@@ -1050,7 +1050,7 @@ def plot_confusion_matrix_bubbles(confusion_matrix,
     ax.set_yticks(range(confusion_matrix.shape[0]), confusion_matrix.index)
 
     ax.margins(.3)
-    ax.set(xlabel='Observed', ylabel='Predicted')
+    ax.set(xlabel='Observed label', ylabel='Predicted label')
     ax.invert_yaxis()
     _set_title(ax,title)
 

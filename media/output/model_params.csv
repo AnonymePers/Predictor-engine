@@ -211,3 +211,15 @@ FMPlog	('balanced', 'entropy', 8, 1, 2)	71.97	77.55	-1	8
 FMPlog	('balanced', 'entropy', None, 1, 2)	73.48	97.34	-1	33
 FMPlog	('balanced', 'entropy', None, 1, 2)	73.48	97.34	-1	33
 FMPlog	('balanced', 'entropy', None, 1, 2)	73.48	97.34	-1	33
+FMPlog	('balanced', 'gini', None, 10, 2)	73.64	78.3	-1	14
+FMPlog	('balanced', 'gini', None, 10, 2)	73.64	78.3	-1	14
+FMPlog	('balanced', 'gini', None, 10, 2)	73.64	78.3	-1	14
+FMPlog	('balanced', 'entropy', 4, 16, 2)	71.82	71.77	-1	4
+FMPlog	('balanced', 'entropy', 4, 16, 2)	71.82	71.77	-1	4
+FMPlog	('balanced', 'entropy', 4, 16, 2)	71.82	71.77	-1	4
+FMPlog	('balanced', 'entropy', 8, 10, 2)	74.75	78.47	-1	8
+FMPlog	('balanced', 'entropy', 8, 10, 2)	74.75	78.47	-1	8
+FMPlog	('balanced', 'entropy', 8, 10, 2)	74.75	78.47	-1	8
+FMPlog	('balanced', 'entropy', 10, 1, 2)	72.54	81.46	-1	10
+FMPlog	('balanced', 'entropy', 10, 1, 2)	72.54	81.46	-1	10
+FMPlog	('balanced', 'entropy', 10, 1, 2)	72.54	81.46	-1	10

@@ -52,10 +52,11 @@ class latest_IndexBasedTransformer(TransformerMixin):
         if y is None:
             z= grouped.tail(1)[[self.case_id_col] +[self.label_col]]
             z["prefix"]=grouped.size()['size']
-            #dt_transformed = pd.merge(dt_transformed, z, on=self.case_id_col, how="left")
+            dt_transformed = pd.merge(dt_transformed, z, on=self.case_id_col, how="left")
             #print(dt_transformed)
             y = z[self.label_col].apply(lambda x: True if x == self.pos_label else False)
             #print(y)
+            dt_transformed=dt_transformed.drop(self.label_col, axis=1)
             
     
         # one-hot-encode cat cols

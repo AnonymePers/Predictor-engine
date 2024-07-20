@@ -77,9 +77,9 @@ def add_calib_curve(ax,
 
     # Handle x-axis
     if flip_x:
-        x_label, xs = 'Confidence', 1 - np.array(sign_vals)
+        x_label, xs = 'Confidence ', 1 - np.array(sign_vals)
     else:
-        x_label, xs = 'Significance', sign_vals
+        x_label, xs = "Significance (α)", sign_vals
     # Handle y-axis
     if flip_y:
         y_label, ys = 'Accuracy', 1 - np.array(error_rates)
@@ -224,14 +224,14 @@ def plot_calibration(sign_vals = None,
         validate_sign(sign_vals)
         if len(sign_vals) < 2:
             raise ValueError('Must have at least 2 significance values to plot a calibration curve')
-        x_lab = 'Confidence' if flip_x else 'Significance'
+        x_lab = 'Confidence' if flip_x else "Significance (α)"
         x_vals = 1 - to_numpy1D(sign_vals,'sign_vals') if flip_x else to_numpy1D(sign_vals,'sign_vals')
     else:
         # Using conf input
         validate_sign(conf_vals)
         if len(conf_vals) < 2:
             raise ValueError('Must have at least 2 confidence values to plot a calibration curve')
-        x_lab = 'Significance' if flip_x else 'Confidence'
+        x_lab = 'Significance (α)' if flip_x else 'Confidence'
         x_vals = 1 - to_numpy1D(conf_vals,'conf_vals') if flip_x else to_numpy1D(conf_vals,'conf_vals')
     
     # ======================================================
