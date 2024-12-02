@@ -20,6 +20,7 @@ class DatasetManager:
         self.timestamp_col = dataset_confs.timestamp_col[self.dataset_name]
         self.label_col = dataset_confs.label_col[self.dataset_name]
         self.pos_label = dataset_confs.pos_label[self.dataset_name]
+        self.neg_label = dataset_confs.neg_label[self.dataset_name]
 
         self.dynamic_activity_col=dataset_confs.dynamic_activity_col[self.dataset_name]
         self.dynamic_cat_cols = dataset_confs.dynamic_cat_cols[self.dataset_name]
@@ -37,7 +38,16 @@ class DatasetManager:
 
         data = pd.read_csv(os.path.join(dataset_path, dataset_confs.filename[self.dataset_name]), sep=";", dtype=dtypes)
         data[self.timestamp_col] = pd.to_datetime(data[self.timestamp_col])
+            # function to cheack if a case contains A_Pending activity or not
+        '''def check_A_Pending(gr):
+            if any(activity in gr[self.activity_col].values for activity in
+                   ['Release B', 'Release C', 'Release D', 'Return ER']):
+                gr['label'] = self.neg_label  # Set label to negative if condition is met
+            return gr
 
+        data = data.groupby(self.case_id_col).apply(check_A_Pending)
+        data = data.reset_index(drop=True)
+        data.to_csv(os.path.join(dataset_path, dataset_confs.filename[self.dataset_name]), index=False)'''
         return data
 
     def split_data(self, data, train_ratio, split="temporal", seed=22):  

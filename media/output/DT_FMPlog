@@ -1,0 +1,25 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<water flow &le; 4140.0<br/>gini = 0.409<br/>samples = 2143<br/>value = [614, 1529]<br/>class = noAdapt>, fillcolor="#89c4ef"] ;
+1 [label=<water level &le; 7.125<br/>gini = 0.377<br/>samples = 1412<br/>value = [356, 1056]<br/>class = noAdapt>, fillcolor="#7cbeee"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<water flow &le; 1190.0<br/>gini = 0.372<br/>samples = 1385<br/>value = [342, 1043]<br/>class = noAdapt>, fillcolor="#7abdee"] ;
+1 -> 2 ;
+3 [label=<gini = 0.325<br/>samples = 328<br/>value = [67, 261]<br/>class = noAdapt>, fillcolor="#6cb6ec"] ;
+2 -> 3 ;
+4 [label=<water level &le; 1.475<br/>gini = 0.385<br/>samples = 1057<br/>value = [275, 782]<br/>class = noAdapt>, fillcolor="#7fbfee"] ;
+2 -> 4 ;
+5 [label=<gini = 0.26<br/>samples = 13<br/>value = [11, 2]<br/>class = Adapt>, fillcolor="#ea985d"] ;
+4 -> 5 ;
+6 [label=<gini = 0.378<br/>samples = 1044<br/>value = [264, 780]<br/>class = noAdapt>, fillcolor="#7cbeee"] ;
+4 -> 6 ;
+7 [label=<gini = 0.499<br/>samples = 27<br/>value = [14, 13]<br/>class = Adapt>, fillcolor="#fdf6f1"] ;
+1 -> 7 ;
+8 [label=<Human Ressource,_Firefighters &le; 0.5<br/>gini = 0.457<br/>samples = 731<br/>value = [258, 473]<br/>class = noAdapt>, fillcolor="#a5d2f3"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<gini = 0.47<br/>samples = 605<br/>value = [229, 376]<br/>class = noAdapt>, fillcolor="#b2d9f5"] ;
+8 -> 9 ;
+10 [label=<gini = 0.354<br/>samples = 126<br/>value = [29, 97]<br/>class = noAdapt>, fillcolor="#74baed"] ;
+8 -> 10 ;
+}

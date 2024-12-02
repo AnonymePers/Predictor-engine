@@ -19,9 +19,8 @@ def rec_sys_exp(dataset_name):
 
     # determine min and max (truncated) prefix lengths
     min_prefix_length = 1
-    max_prefix_data =min(40, dataset_manager.get_pos_case_length_quantile(data, 0.90))
-    
-    
+    max_prefix_data =dataset_manager.get_pos_case_length_quantile(data, 0.90)
+
     data = dataset_manager.generate_prefix_data(data=data, min_length=1, max_length=max_prefix_data, gap=1)
     #print(data.groupby(dataset_manager.case_id_col).tail(1))
     encoder_args = {'case_id_col':dataset_manager.case_id_col, 
@@ -82,7 +81,7 @@ def rec_sys_exp(dataset_name):
         if load_model:
             try:
                 with open(os.path.join(settings.models_path, f'{dataset_name}_{constr_family}.pickle'), 'rb') as file:
-                    model, best_hyperparams_combination = pickle.load(file)
+                    path, model, best_hyperparams_combination = pickle.load(file)
                     #print(len(paths))
                     print(f"Model {dataset_name}_{constr_family}.pickle loaded")
                     
@@ -157,8 +156,8 @@ def rec_sys_exp(dataset_name):
     test_pval = icp.predict(X_test.values)
     #print(test_pval)
     sys.path.append("plot_utils/python/src/")
-    from pharmbio.cp import metrics
-    from pharmbio.cp import plotting
+    from plot_utils.python.src.pharmbio.cp import metrics
+    from plot_utils.python.src.pharmbio.cp import plotting
     
     test_pval = pd.DataFrame(test_pval, columns=['p_value_0', 'p_value_1'])  
 

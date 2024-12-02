@@ -1,0 +1,21 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<SIRSCritTemperature &le; 0.5<br/>gini = 0.494<br/>samples = 3468<br/>value = [1922, 1546]<br/>class = Adapt>, fillcolor="#fae6d8"] ;
+1 [label=<gini = 0.5<br/>samples = 515<br/>value = [253, 262]<br/>class = noAdapt>, fillcolor="#f8fcfe"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<Diagnose,_F &le; 0.5<br/>gini = 0.492<br/>samples = 2953<br/>value = [1669, 1284]<br/>class = Adapt>, fillcolor="#f9e2d1"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label=<Diagnose,_RD &le; 0.5<br/>gini = 0.492<br/>samples = 2919<br/>value = [1642, 1277]<br/>class = Adapt>, fillcolor="#f9e3d3"] ;
+2 -> 3 ;
+4 [label=<Leucocytes &le; 20.75<br/>gini = 0.492<br/>samples = 2914<br/>value = [1642, 1272]<br/>class = Adapt>, fillcolor="#f9e3d2"] ;
+3 -> 4 ;
+5 [label=<gini = 0.493<br/>samples = 2746<br/>value = [1534, 1212]<br/>class = Adapt>, fillcolor="#fae5d5"] ;
+4 -> 5 ;
+6 [label=<gini = 0.459<br/>samples = 168<br/>value = [108.0, 60.0]<br/>class = Adapt>, fillcolor="#f3c7a7"] ;
+4 -> 6 ;
+7 [label=<gini = 0.0<br/>samples = 5<br/>value = [0, 5]<br/>class = noAdapt>, fillcolor="#399de5"] ;
+3 -> 7 ;
+8 [label=<gini = 0.327<br/>samples = 34<br/>value = [27, 7]<br/>class = Adapt>, fillcolor="#eca26c"] ;
+2 -> 8 ;
+}
